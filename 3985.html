@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<title>Конструктор</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="description" content="Конструктор">
+	<link rel="shortcut icon" type="image/x-icon" href="https://cosuv.ru/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://cosuv.ru/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://cosuv.ru/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://cosuv.ru/favicon-16x16.png">
+	<link rel="manifest" href="https://cosuv.ru/manifest.json">
+	<link rel="mask-icon" href="https://cosuv.ru/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+	
+	<link rel="stylesheet" class="link-css-main" data-hash="dd9d980e9ebb72cad7facbadb766702995ce2858ef4ec72e3240f739c6e38c77" href="https://cosuv.ru/app/css/3985/main/dd9d980e9ebb72cad7facbadb766702995ce2858ef4ec72e3240f739c6e38c77">
+	<link rel="stylesheet" class="link-css-responsive" data-hash="58d0af74246415f0272c7a8d2f4efefa95ce2858ef4ec72e3240f739c6e38c77" href="https://cosuv.ru/app/css/3985/responsive/58d0af74246415f0272c7a8d2f4efefa95ce2858ef4ec72e3240f739c6e38c77">
+	<script src="https://cosuv.ru/app/js/3985/main/98fdaa043dfedf62d5c2eafd01257aee"></script>
+	<script src="https://cosuv.ru/app/js/3985/init/95ce2858ef4ec72e3240f739c6e38c77"></script>
+</head>
+<body>
+	
+<div class="app">
+	
+	<nav>
+		<ul>
+			<li class="capt capt-select" data-lang="65" data-lang-after=":">Выберите:</li>
+			<li class="btn icon base" data-lang="66">Предмет</li>
+			<li class="btn-half-wrap btns-sex clearfix">
+				<div class="btn btn-half man" data-lang="67">Муж</div>
+				<div class="btn btn-half woman" data-lang="68">Жен</div>
+			</li>
+			<li class="btn icon age" data-lang="69">Возраст</li>
+			<li class="btn icon model" data-lang="70">Модель</li>
+			<li class="btn icon color" data-lang="71">Цвет</li>
+			<li class="btn icon size" data-lang="72">Размер</li>
+			<li class="btn icon format" data-lang="194">Формат</li>
+			<li class="capt capt-add"  data-lang="74" data-lang-after=":">Добавьте:</li>
+			<li class="btn icon image" data-lang="75">Картинку</li>
+			<li class="btn icon figure" data-lang="76">Фигуру</li>
+			<li class="btn icon text" data-lang="77">Текст</li>
+			<li class="sep"></li>
+			<li class="btn orange save" data-lang="117">Сохранить</li>
+		</ul>
+		<div class="btn-nav-close"></div>
+		<div class="btn-nav-close-top"></div>
+	</nav>
+	<div class="mobile-pop-close"></div>
+	
+	<div class="btn-full" title="Полноэкранный режим" data-lang-title="79"></div>
+	
+	<div class="ribbon">
+		<div class="in"><!-- Не разрывать строку, текстовые ноды недопустимы -->
+			<span data-lang="113" data-lang-after=":">Выбрано:</span><div class="base"></div><div class="model"></div><div class="sex"></div><div class="age"></div><div class="color"></div><div class="size"></div><div class="method"></div><div class="format"></div>
+		</div>
+	</div>
+	
+	<div class="mobile-sides">
+		<div class="overflow">
+			<div class="items"></div>
+		</div>
+		<div class="scroll-line"><div class="handle"></div></div>
+	</div>
+	
+	<div class="svgwrap">
+		<svg id="Заказ" data-lang-id="80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" overflow="visible" xml:space="preserve" text-rendering="geometricPrecision">
+			<g class="sides" id="Стороны" data-lang-id="81"></g>
+		</svg>
+	</div>
+	
+	<div class="svg-filters">
+		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+			<filter id="svgselect">
+				<feColorMatrix in="SourceGraphic" type="matrix"
+					values="0 0 0 0 1
+			                0 0 0 0 0.3
+			                0 0 0 0 0
+			                0 0 0 1 0">
+				</feColorMatrix>
+				<feMorphology id="svgselect-morph" radius="3" operator="dilate"></feMorphology>
+				<feComposite in="SourceGraphic" operator="over"></feComposite>
+			</filter>
+			<filter id="antialias">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="0"></feGaussianBlur>
+			</filter>
+		</svg>
+		
+	</div>
+	
+	<div class="hidden-svg-icon-tpl">
+		<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+			<defs>
+				<radialGradient id="color-wheel-gradient" cx="12" cy="12" r="12" gradientUnits="userSpaceOnUse">
+					<stop stop-opacity="0.8" stop-color="white" offset="0"></stop>
+					<stop stop-opacity="0" stop-color="white" offset="1"></stop>
+				</radialGradient>
+			</defs>
+			<g id="color-wheel-colors">
+				<path fill="#9900cc" d="m 12,12 6,10.4 c -1.8,1 -3.8,1.6 -6,1.6 z"></path>
+				<path fill="#ff00ff" d="m 12,12 10.4,6 c -1.1,1.8 -2.6,3.3 -4.4,4.4 z"></path>
+				<path fill="#ff0000" d="m 12,12 h 12 c 0,2.2 -0.6,4.2 -1.6,6 z"></path>
+				<path fill="#ff8300" d="M 12,12 22.4,6 c 1,1.77 1.6,3.82 1.6,6 v 0 z"></path>
+				<path fill="#ffb500" d="M 12,12 18,1.61 c 1.8,1.05 3.3,2.57 4.4,4.39 z"></path>
+				<path fill="#ffff00" d="m 12,12 v -11.996 0 c 2.2,0 4.2,0.584 6,1.606 z"></path>
+				<path fill="#00ff00" d="M 12,12 6,1.61 C 7.76,0.589 9.81,0.004 12,0.004 Z"></path>
+				<path fill="#00df00" d="M 12,12 1.61,6 C 2.66,4.18 4.18,2.66 6,1.61 Z"></path>
+				<path fill="#00e0ac" d="M 12,12 H 0 v 0 C 0,9.82 0.585,7.77 1.6,6 Z"></path>
+				<path fill="#00ffff" d="M 12,12 1.61,18 C 0.585,16.2 0,14.2 0,12 Z"></path>
+				<path fill="#00ccff" d="M 12,12 6,22.4 C 4.18,21.3 2.66,19.8 1.61,18 Z"></path>
+				<path fill="#0000ff" d="M 12,12 V 24 C 9.81,24 7.76,23.4 6,22.4 Z"></path>
+				<path fill="#7500d8" d="m 11,24 1,-12 1,12 c -0.3,0 -0.7,0 -1,0 -0.3,0 -0.7,0 -1,0 z"></path>
+				<path fill="#bc00de" d="M 17.1,22.9 12,12 l 6.9,9.8 c -0.6,0.4 -1.2,0.8 -1.8,1.1 z"></path>
+				<path fill="#ff0096" d="M 21.8,18.9 12,12 22.9,17.1 c -0.3,0.6 -0.7,1.2 -1.1,1.8 z"></path>
+				<path fill="#ff5600" d="M 24,13 12,12 24,11 c 0,0.3 0,0.7 0,1 0,0.3 0,0.7 0,1 z"></path>
+				<path fill="#ff9a00" d="M 22.9,6.91 12,12 21.8,5.14 c 0.4,0.56 0.8,1.15 1.1,1.77 z"></path>
+				<path fill="#ffd900" d="M 18.9,2.16 12,12 17.1,1.14 c 0.6,0.29 1.2,0.63 1.8,1.02 z"></path>
+				<path fill="#baff00" d="M 13,0.047 12,12 11,0.047 c 0.3,-0.028 0.7,-0.043 1,-0.043 0.3,0 0.7,0.015 1,0.043 z"></path>
+				<path fill="#00eb00" d="M 6.91,1.14 12,12 5.13,2.16 C 5.69,1.77 6.28,1.43 6.91,1.14 Z"></path>
+				<path fill="#00cf00" d="M 2.16,5.14 12,12 1.13,6.91 C 1.42,6.29 1.77,5.7 2.16,5.14 Z"></path>
+				<path fill="#00ebc7" d="M 0.044,11 12,12 0.044,13 C 0.015,12.7 0,12.3 0,12 0,11.7 0.015,11.3 0.044,11 Z"></path>
+				<path fill="#00e7ff" d="M 1.13,17.1 12,12 2.16,18.9 C 1.77,18.3 1.42,17.7 1.13,17.1 Z"></path>
+				<path fill="#0086ff" d="M 5.14,21.8 12,12 6.91,22.9 C 6.29,22.6 5.69,22.2 5.14,21.8 Z"></path>
+			</g>
+		</svg>
+		<svg>
+			<path id="icon-clear-path" d="m 0,2 v 2 h 1 v 1 l 1,13 c 0,1 1,2 2,2 h 10 c 1,0 2,-1 2,-2 L 17,5 V 4 h 1 V 2 H 12 C 12,1 11,0 10,0 H 8 C 7,0 6,1 6,2 Z M 11,2 H 7 C 7,1.5 7.5,1 8,1 h 2 c 0.5,0 1,0.5 1,1 z M 3,5 4,18 H 6 L 5.5,5 Z M 15,5 14,18 H 12 L 12.5,5 Z M 7.5,5 8,18 h 2 L 10.5,5 Z"></path>
+		</svg>
+	</div>
+	
+	<div class="trans">
+		<div class="frame1"></div><div class="frame2" tabindex="-1"></div>
+		<div class="rotate" title="Вращение" data-lang-title="82"></div>
+		<div class="scale" title="Изменение размера с сохранением пропорций" data-lang-title="83"></div>
+		<div class="scale-x" title="Изменение пропорций" data-lang-title="84"></div>
+		<div class="scale-y" title="Изменение пропорций" data-lang-title="84"></div>
+		<div class="remove" title="Удаление" data-lang-title="85"></div>
+		<div class="duplicate" title="Создание копии" data-lang-title="86"></div>
+		<div class="over"></div>
+		<div class="under"></div>
+		<div class="circle"></div>
+	</div>
+	
+	<aside class="sidebar">
+		<div class="in">
+			<div class="langs"></div>
+			<div class="sides clearfix"></div>
+			<div class="zoom-wrap clearfix">
+				<label data-lang="87">Масштаб</label>
+				<div class="slider zoom">
+					<div class="handle"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="widgets"></div>
+		</div>
+	</aside>
+	
+	<div class="central-place">
+		<div class="absent-mes">Нет в наличии</div>
+	</div>
+	
+	
+	
+	
+	<script type="text/tpls">
+		
+		<!--[ popBasesContent ]-->
+		<div class="pop-bases-content">
+			<div class="info" data-lang="88" data-lang-after=":">Предметы:</div>
+			<div class="paddings">
+				<div class="items clearfix">
+					<div class="item">
+						<div class="title"></div>
+						<div class="img"><div class="img-center"><img src=""></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ popModelsContent ]-->
+		<div class="pop-models-content">
+			<div class="info" data-lang="89" data-lang-after=":">Модели:</div>
+			<div class="paddings">
+				<div class="items clearfix">
+					<div class="item">
+						<div class="title"></div>
+						<div class="img"><div class="img-center"><img src=""></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ popColorsContent ]-->
+		<div class="pop-colors-content">
+			<div class="palette">
+				<div class="co-palette">
+					<div class="main-rect"><div class="picker"></div></div>
+					<div class="hue-rect"><div class="picker"></div></div>
+				</div>
+			</div>
+			<div class="paddings">
+				<div class="info" data-lang="90" data-lang-after=":">Цвета:</div>
+				<div class="items clearfix">
+					<div class="item">
+						<div class="title"></div>
+						<div class="img"><div class="img-center"><img src=""></div></div>
+						<div class="color"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ popSizesContent ]-->
+		<div class="pop-sizes-content">
+			<div class="info" data-lang="91" data-lang-after=":">Размеры:</div>
+			<div class="paddings">
+				<div class="items"></div>
+			</div>
+		</div>
+		
+		<!--[ popMethodsContent ]-->
+		<div class="pop-method-content">
+			<div class="info" data-lang="92" data-lang-after=":">Выберите метод печати изображения:</div>
+			<div class="paddings">
+				<div class="items"></div>
+			</div>
+		</div>
+		
+		<!--[ popFormatsContent ]-->
+		<div class="pop-formats-content">
+			<div class="info" data-lang="195" data-lang-after=":">Форматы:</div>
+			<div class="paddings">
+				<div class="items"></div>
+			</div>
+		</div>
+		
+		<!--[ popImagesContent ]-->
+		<div class="pop-images-content">
+			<div class="menu">
+				<div class="file-drop">
+					<div class="frame">
+						<div class="btn add">
+							<span data-lang="93">Выберите файл</span>
+							<form action="https://cosuv.ru/imgupload" method="post" enctype="multipart/form-data">
+								<input type="file" id="pop-images-file" name="img" accept="image/*">
+							</form>
+						</div>
+						<span data-lang="127">Или перетяните файл сюда</span>
+					</div>
+				</div>
+				<div class="btn btn-from drive">С компьютера</div>
+				<div class="btn btn-from admin" data-lang="141">С конструктора</div>
+				<ul class="cats"></ul>
+			</div>
+			<div class="paddings">
+				<div class="imgs clearfix">
+					<div class="item"></div>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ popFiguresContent ]-->
+		<div class="pop-clipart-content">
+			<div class="info" data-lang="95" data-lang-after=":">Векторные фигуры:</div>
+			<div class="paddings">
+				<div class="items"></div>
+			</div>
+		</div>
+		
+		<!--[ popDetailsContent ]-->
+		<div class="pop-details-content">
+			<div class="info" data-lang-after=":"></div>
+			<div class="paddings">
+				<div class="items clearfix">
+					<div class="item">
+						<div class="title"></div>
+						<div class="img"><div class="img-center"><img src=""></div></div>
+						<div class="price"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ popOrderContent ]-->
+		<div class="pop-order-content">
+			<div class="paddings">
+				<h3 data-lang="80">Заказ:</h3>
+				<form action="" method="post">
+					<div class="client-fields">
+						<div class="row field-text">
+							<label></label><input type="text" name="" value="" class="inp-style1">
+						</div>
+						<div class="row field-quantity">
+							<label></label><input type="number" name="" min="1" max="99999" value="1" class="inp-style1">
+						</div>
+						<div class="row field-email">
+							<label></label><input type="email" name="" value="" class="inp-style1">
+						</div>
+						<div class="row field-dropdown">
+							<label></label><select name="" class="inp-style1"></select>
+						</div>
+						<div class="row field-textarea">
+							<label></label><textarea name="" class="inp-style1"></textarea>
+						</div>
+						<div class="row field-price">
+							<label></label><div class="total-price"></div>
+						</div>
+						<div class="row field-checkbox">
+							<label><span></span><input type="checkbox"><i></i></label>
+						</div>
+						<div class="row field-discount">
+							<label></label><div class="discount"></div>
+						</div>
+						<div class="row field-promocode">
+							<label></label><input type="text" name="" value="" class="inp-style1">
+							<div class="state" data-state="default"></div>
+						</div>
+						<div class="capt"></div>
+						<p></p>
+					</div>
+					<div class="required-descr" data-lang="100">поля со звездочкой обязательны для заполнения</div>
+					<div class="buttons">
+						<button type="submit" class="btn orange icon order" data-lang="78">Заказать</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<!--[ popOrderAgainContent ]-->
+		<div class="pop-order-again-content">
+			<h3 data-lang="102" data-lang-after=":">Новый заказ:</h3>
+			<div class="btn btn-use-current" data-lang="103">Использовать текущую композицию</div>
+			<div class="btn btn-make-new" data-lang="104">Новая композиция</div>
+		</div>
+		
+		<!--[ widgetSideLayers ]-->
+		<div class="widget widget-side-layers">
+			<h3 data-lang="96">Слои модели</h3>
+			<div class="layers-list">
+				<div class="layer">
+					<div class="layer-content"><h4></h4></div>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ widgetLayers ]-->
+		<div class="widget widget-layers">
+			<h3 data-lang="97">Детали композиции</h3>
+			<div class="layers-list">
+				
+				<div class="layer image">
+					<div class="layer-content">
+						<div class="img"><span><img src="https://cosuv.ru/app-data/img/loading.gif"></span></div>
+						<h4 data-lang="12">Картинка</h4>
+					</div>
+				</div>
+				
+				<div class="layer figure">
+					<div class="layer-content">
+						<div class="img"></div>
+						<h4 data-lang="10">Фигура</h4>
+					</div>
+				</div>
+				
+				<div class="layer text">
+					<div class="layer-content">
+						<div class="img"><i></i></div>
+						<div class="info">
+							<h4 data-lang="17">Текст</h4>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<!--[ widgetImage ]-->
+		<div class="widget widget-image">
+			<h3 class="crumbs"><span data-lang="97">Детали композиции</span> <i class="ar"></i> <co-lang data-lang="12">Картинка</co-lang></h3>
+			<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="img">
+			<div class="btn-center"><div class="btn btn-select-image">Выбрать</div></div>
+			
+			<div class="color-slider cs-brightness">
+				<div class="cs-title" data-lang="172">Яркость</div>
+				<div class="cs-slider brightness"><div></div></div>
+			</div>
+			
+			<div class="color-slider cs-saturation">
+				<div class="cs-title" data-lang="173">Сочность</div>
+				<div class="cs-slider saturation"><div></div></div>
+			</div>
+			
+			<div class="color-slider cs-hue">
+				<div class="cs-title" data-lang="174">Оттенок</div>
+				<div class="cs-slider hue"><div></div></div>
+			</div>
+			
+			<div class="switcher">
+				<label><input type="radio" name="coloriz-mode" data-mode="subtract" checked><span data-lang="175">Окрашивание</span></label>
+				<label><input type="radio" name="coloriz-mode" data-mode="fill"><span data-lang="176">Заливка</span></label>
+			</div>
+			
+			<div class="color-picker">
+				<div class="co-palette">
+					<div class="main-rect"><div class="picker"></div></div>
+					<div class="hue-rect"><div class="picker"></div></div>
+				</div>
+			</div>
+			
+			<div class="limited-palette clearfix"></div>
+			
+			<div class="color-btns">
+				<div class="btn-white no-coloriz" data-lang="105" title="Отменить стиль">Очистить</div>
+				<div class="btn-white copy" data-lang="144" title="Скопировать стиль">Копировать</div>
+				<div class="btn-white paste" data-lang="145" title="Вставить стиль">Вставить</div>
+			</div>
+			
+			<div class="compos-params">
+				<label class="check-style1 check-notrans"><input type="checkbox"><i></i><span>Запретить перемещение, масштаб, вращение и копирование</span></label>
+				<label class="check-style1 check-nodel"><input type="checkbox"><i></i><span>Запретить удаление</span></label>
+				<label class="check-style1 check-nocoloriz"><input type="checkbox"><i></i><span>Запретить смену настроек цветности</span></label>
+				<label class="check-style1 check-noprice"><input type="checkbox"><i></i><span>Не учитывать в цене</span></label>
+			</div>
+			<div class="change-box">
+				<label class="check-style1 check-changeable"><input type="checkbox"><i></i><span>Заменяемая</span></label>
+				<div class="if-changeable">
+					<label class="check-style1 check-price"><input type="checkbox"><i></i><span>Учитывать в цене только после выбора клиентом</span></label>
+					<label class="check-style1 check-btn"><input type="checkbox"><i></i><span>Показывать кнопку</span></label>
+					<input type="text" class="inp-style1 inp-btn-capt" placeholder="Надпись кнопки">
+					<h3>Размеры картинки клиента:</h3>
+					<label class="radio-style1 chimgsize-equal" title="Выбранная картинка клиента по габаритам станет идентичной данной, пропорции его картинки не сохранятся"><input type="radio" name="chimgsize" checked><i></i><span>Равны вашей</span></label>
+					<label class="radio-style1 chimgsize-contain" title="Выбранная картинка клиента впишется в прямоугольник размеров данной картинки, сохраняя свои пропорции"><input type="radio" name="chimgsize"><i></i><span>Вписать</span></label>
+					<label class="radio-style1 chimgsize-cover" title="Выбранная картинка клиента покроет прямоугольник размеров данной картинки, сохраняя свои пропорции."><input type="radio" name="chimgsize"><i></i><span>Покрыть</span></label>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ widgetFigure ]-->
+		<div class="widget widget-figure">
+			<h3 class="crumbs"><span data-lang="97">Детали композиции</span> <i class="ar"></i> <co-lang data-lang="10">Фигура</co-lang></h3>
+			<div class="img"></div>
+			<div class="compos-params">
+				<label class="check-style1 check-notrans"><input type="checkbox"><i></i><span>Запретить перемещение, масштаб, вращение и копирование</span></label>
+				<label class="check-style1 check-nodel"><input type="checkbox"><i></i><span>Запретить удаление</span></label>
+				<label class="check-style1 check-nocoloriz"><input type="checkbox"><i></i><span>Запретить смену цвета и текстуры</span></label>
+				<label class="check-style1 check-noprice"><input type="checkbox"><i></i><span>Не учитывать в цене</span></label>
+			</div>
+			<div class="color-picker">
+				<div class="co-palette">
+					<div class="main-rect"><div class="picker"></div></div>
+					<div class="hue-rect"><div class="picker"></div></div>
+				</div>
+			</div>
+			<div class="limited-palette clearfix"></div>
+			<div class="color-btns">
+				<div class="btn-white copy" data-lang="144" title="Скопировать стиль">Копировать</div>
+				<div class="btn-white paste" data-lang="145" title="Вставить стиль">Вставить</div>
+			</div>
+			<div class="patterns-box">
+				<h3 class="crumbs clearfix"><co-lang data-lang="115">Фон фигуры</co-lang> <select class="inp-style1"></select></h3>
+				<div class="items clearfix"></div>
+			</div>
+		</div>
+		
+		<!--[ widgetText ]-->
+		<div class="widget widget-text">
+			<h3 class="crumbs"><span data-lang="97">Детали композиции</span> <i class="ar"></i> <co-lang data-lang="17">Текст</co-lang></h3>
+			<div class="compos-params">
+				<label class="check-style1 check-notrans"><input type="checkbox"><i></i><span>Запретить перемещение, масштаб, вращение и копирование</span></label>
+				<label class="check-style1 check-nodel"><input type="checkbox"><i></i><span>Запретить удаление</span></label>
+				<label class="check-style1 check-noedit"><input type="checkbox"><i></i><span>Запретить редактирование текста</span></label>
+				<label class="check-style1 check-nofont"><input type="checkbox"><i></i><span>Запретить смену шрифта</span></label>
+				<label class="check-style1 check-nobiu"><input type="checkbox"><i></i><span>Запретить смену жирности, курсива и подчеркивания</span></label>
+				<label class="check-style1 check-noalign"><input type="checkbox"><i></i><span>Запретить смену выравнивания</span></label>
+				<label class="check-style1 check-nolineh"><input type="checkbox"><i></i><span>Запретить смену интерлиньяжа</span></label>
+				<label class="check-style1 check-noround"><input type="checkbox"><i></i><span>Запретить смену скругления</span></label>
+				<label class="check-style1 check-nocoloriz"><input type="checkbox"><i></i><span>Запретить смену цвета и текстуры</span></label>
+				<label class="check-style1 check-noprice"><input type="checkbox"><i></i><span>Не учитывать в цене</span></label>
+			</div>
+			<textarea class="inp-style1" spellcheck="false"></textarea>
+			<div class="font-params clearfix">
+				<span class="font-wrap">
+					<a class="btn font" href="#" data-lang="99">Шрифт</a>
+				</span>
+				<span class="biu-wrap">
+					<a class="bold" href="#" data-lang="106">Ж</a>
+					<a class="italic" href="#" data-lang="107">К</a>
+					<a class="underline" href="#" data-lang="108">Ч</a>
+				</span>
+				<span class="align-wrap">
+					<a class="align-left" href="#"></a>
+					<a class="align-center" href="#"></a>
+					<a class="align-right" href="#"></a>
+				</span>
+			</div>
+			<div class="line-height">
+				<div class="minus"></div>
+				<div class="plus"></div>
+				<div class="slider">
+					<div class="handle"></div>
+					<div class="line"></div>
+					<div class="pointer"></div>
+				</div>
+			</div>
+			<div class="round">
+				<div class="minus"></div>
+				<div class="plus"></div>
+				<div class="slider">
+					<div class="handle"></div>
+					<div class="line"></div>
+					<div class="pointer"></div>
+				</div>
+			</div>
+			<div class="color-picker">
+				<div class="co-palette">
+					<div class="main-rect"><div class="picker"></div></div>
+					<div class="hue-rect"><div class="picker"></div></div>
+				</div>
+			</div>
+			<div class="limited-palette clearfix"></div>
+			<div class="color-btns">
+				<div class="btn-white copy" data-lang="144" title="Скопировать цвет">Копировать</div>
+				<div class="btn-white paste" data-lang="145" title="Вставить цвет">Вставить</div>
+			</div>
+			<div class="patterns-box">
+				<h3 class="crumbs clearfix"><co-lang data-lang="114">Фон текста</co-lang> <select class="inp-style1"></select></h3>
+				<div class="items clearfix"></div>
+			</div>
+		</div>
+		
+		<!--[ widgetFont ]-->
+		<div class="widget widget-font">
+			<h3 class="crumbs"><span data-lang="98">Слои</span> <i class="ar"></i> <span data-lang="17">Текст</span> <i class="ar"></i> <co-lang data-lang="99">Шрифт</co-lang></h3>
+			<div class="not-all-shown"></div>
+			<ul class="font-list">
+				<li>
+					<div class="block">
+						<div class="capt"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<!--[ widgetDescr ]-->
+		<div class="widget widget-descr">
+			<p></p>
+		</div>
+		
+		<!--[ mobileColorPicker ]-->
+		<div class="mobile-color-picker">
+			<div class="co-palette">
+				<div class="main-rect"><div class="picker"></div></div>
+				<div class="hue-rect"><div class="picker"></div></div>
+			</div>
+			<div class="limited-colors">
+				<div class="overflow">
+					<div class="mover"></div>
+				</div>
+				<div class="scroll-line"><div class="handle"></div></div>
+			</div>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>
+			</div>
+		</div>
+		
+		<!--[ mobileBrightnessSliderPop ]-->
+		<div class="mobile-brightness-slider-pop">
+			<div class="color-slider cs-brightness">
+				<div class="cs-title" data-lang="172">Яркость</div>
+				<div class="cs-slider brightness"><div></div></div>
+			</div>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>
+			</div>
+		</div>
+		
+		<!--[ mobileSaturationSliderPop ]-->
+		<div class="mobile-saturation-slider-pop">
+			<div class="color-slider cs-saturation">
+				<div class="cs-title" data-lang="173">Сочность</div>
+				<div class="cs-slider saturation"><div></div></div>
+			</div>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>
+			</div>
+		</div>
+		
+		<!--[ mobileHueSliderPop ]-->
+		<div class="mobile-hue-slider-pop">
+			<div class="color-slider cs-hue">
+				<div class="cs-title" data-lang="174">Оттенок</div>
+				<div class="cs-slider hue"><div></div></div>
+			</div>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>
+			</div>
+		</div>
+		
+		<!--[ mobilePatternPicker ]-->
+		<div class="mobile-pattern-picker">
+			<div class="cats-select-wrap">
+				<select></select>
+				<div class="select-width-helper"></div>
+			</div>
+			<div class="items">
+				<div class="overflow">
+					<div class="mover"></div>
+				</div>
+				<div class="scroll-line"><div class="handle"></div></div>
+			</div>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>				
+			</div>
+		</div>
+		
+		<!--[ mobileTextEditPop ]-->
+		<div class="mobile-text-edit-pop">
+			<textarea spellcheck="false"></textarea>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>
+			</div>
+		</div>
+		
+		<!--[ mobileFontPicker ]-->
+		<div class="mobile-font-picker">
+			<div class="items-wrap">
+				<div class="items"></div>
+			</div>
+			<div class="scroll-line"><div class="handle"></div></div>
+			<div class="close"></div>
+			<div class="clear">
+				<svg><use xlink:href="#icon-clear-path"></use></svg>
+			</div>
+		</div>
+		
+		<!--[ mobileLineHeightPop ]-->
+		<div class="mobile-line-height-pop">
+			<div class="minus"></div>
+			<div class="plus"></div>
+			<div class="slider">
+				<div class="handle"></div>
+				<div class="line"></div>
+				<div class="pointer">
+					<svg><path d="m 0.5,11.5 v -4 l 5,-5.01 V 0 2.49 l 5,5.01 v 4 z"></path></svg>					
+				</div>
+			</div>
+			<div class="close"></div>
+		</div>
+		
+		<!--[ mobileTextRoundPop ]-->
+		<div class="mobile-text-round-pop">
+			<div class="minus"></div>
+			<div class="plus"></div>
+			<div class="slider">
+				<div class="handle"></div>
+				<div class="line"></div>
+				<div class="pointer">
+					<svg><path d="m 0.5,11.5 v -4 l 5,-5.01 V 0 2.49 l 5,5.01 v 4 z"></path></svg>					
+				</div>
+			</div>
+			<div class="close"></div>
+		</div>
+		
+		<!--[ mobileLangPop ]-->
+		<div class="mobile-lang-pop">
+			<div class="items"></div>
+		</div>
+		
+		<!--[ mobileBottomTopPanelDefault ]-->
+		<div class="panel panel-default">
+			<div class="btns-adds">
+				<div class="width-checker">
+					<div class="btns-adds-btn btn-image">
+						<svg width="24" height="19">
+							<path d="M 21.818,-5.9e-7 H 2.182 C 1.091,-5.9e-7 0,1.0549994 0,2.1109994 V 16.889 C 0,18.05 0.982,19 2.182,19 H 21.818 C 22.909,19 24,17.944 24,16.889 V 2.1109994 C 24,1.0549994 22.909,-5.9e-7 21.818,-5.9e-7 Z M 3,16 7.5,10 10.5,14 15,7.9999998 21,16 Z"></path>
+						</svg>
+						<span>Картинку</span>
+					</div>
+					<div class="btns-adds-btn btn-figure">
+						<svg width="24" height="22">
+							<path d="m 12.003,0.006949 4.081,6.599 7.922,1.617 -5.4,5.696 0.815,7.598 -7.418,-3.078 -7.418,3.078 0.815,-7.598 -5.4,-5.696 7.922,-1.617 z"></path>
+						</svg>
+						<span>Фигуру</span>
+					</div>
+					<div class="btns-adds-btn btn-text">
+						<svg width="24" height="19">
+							<path d="M 0,3.9999999e-8 V 3.9999999 H 6 V 19 H 9.9999992 V 3.9999999 H 15.999999 V 3.9999998e-8 Z M 22.999999,6.9989999 l -10,10e-4 V 11 h 3 v 7.999 h 4 V 11 h 3 z"></path>
+						</svg>
+						<span>Текст</span>
+					</div>
+				</div>
+			</div>
+			<div class="btn-lang">
+				<svg width="16" height="16" stroke="#666666">
+					<circle fill="none" cx="8" cy="8" r="7.5"></circle>
+					<path fill="none" d="M1 5.5 L15 5.5 M1 10.5 L15 10.5 M8 0.5 Q2 8 8 15.5 M8 0.5 Q14 8 8 15.5"></path>
+				</svg>
+				<span></span>
+			</div>
+		</div>
+		
+		<!--[ mobileBottomTopPanelImage ]-->
+		<div class="panel panel-image">
+			<div class="btns-image">
+				<div class="btn-color">
+					<svg height="24" width="24">
+						<use xlink:href="#color-wheel-colors"></use>
+						<circle fill="url(#color-wheel-gradient)" stroke="rgba(0,0,0,.35)" stroke-width="1" cx="12" cy="12" r="11.5"></circle>
+					</svg>
+				</div>
+				<div class="btn-fill">
+					<svg height="25" width="26">
+						<path class="paint" fill="#c663ff" d="m 4,12 -2,2 9,9 9,-9 v -2 z m 18.9,2 c -0.8,3.3 -2.8,4.9 -3,6.7 -0.3,1.6 0.7,3.3 3,3.3 2.3,0 3.3,-1.7 3,-3.3 -0.2,-1.8 -2.2,-3.4 -3,-6.7 z"></path>
+						<path class="tube" fill="#666666" fill-rule="evenodd" d="M 0,14 11,25 23,13 10,0 8.5,1.5 l 2,2 z m 3,0 8,8 9,-9 -8,-8 z"></path>
+					</svg>
+				</div>
+				<div class="btn-bright">
+					<svg height="26" width="26">
+						<path fill="#666666" d="M 22,22 H 16.7 L 13,25.7 9.26,22 H 4 V 16.8 L 0.272,13 4,9.27 V 4 H 9.27 L 13,0.272 16.8,4 H 22 V 9.27 L 25.8,13 22,16.7 Z"></path>
+						<circle fill="#ffffff" cx="13" cy="13" r="7"></circle>
+					</svg>
+				</div>
+				<div class="btn-satur">
+					<svg width="26" height="19">
+						<defs>
+							<linearGradient id="isg8468">
+								<stop class="grad1" stop-color="#ff8a00" offset="0"></stop>
+								<stop class="grad2" stop-color="#a49d93" offset="0.678431"></stop>
+								<stop class="grad3" stop-color="#9e9e9e" offset="1"></stop>
+							</linearGradient>
+						</defs>
+						<path fill="#666666" d="M 9,14 4,19 H 14 Z M 9,5 4,0 h 10 z"></path>
+						<rect fill="url(#isg8468)" x="0" y="5" width="26" height="9"></rect>
+					</svg>
+				</div>
+				<div class="btn-hue">
+					<svg width="26" height="19">
+						<defs>
+							<linearGradient id="ihg941089">
+								<stop stop-color="red" offset="0"></stop>
+								<stop stop-color="yellow" offset="0.231373"></stop>
+								<stop stop-color="#00cc00" offset="0.368627"></stop>
+								<stop stop-color="aqua" offset="0.501961"></stop>
+								<stop stop-color="blue" offset="0.65098"></stop>
+								<stop stop-color="#ae00ff" offset="0.741176"></stop>
+								<stop stop-color="#ff52ff" offset="0.831373"></stop>
+								<stop stop-color="#ff00b0" offset="0.909804"></stop>
+								<stop stop-color="red" offset="1"></stop>
+							</linearGradient>
+						</defs>
+						<path fill="#666666" d="m 18,14 -5,5 H 23 Z M 18,5 13,0 h 10 z"></path>
+						<rect fill="url(#ihg941089)" x="0" y="5" width="26" height="9"></rect>
+					</svg>
+				</div>
+			</div>
+		</div>
+		
+		<!--[ mobileBottomTopPanelFigure ]-->
+		<div class="panel panel-figure">
+			<div class="btns-figure">
+				<div class="btn-color">
+					<svg height="24" width="24">
+						<use xlink:href="#color-wheel-colors"></use>
+						<circle fill="url(#color-wheel-gradient)" stroke="rgba(0,0,0,.35)" stroke-width="1" cx="12" cy="12" r="11.5"></circle>
+					</svg>
+				</div>
+				<div class="btn-pattern"><i></i></div>
+			</div>
+		</div>
+		
+		<!--[ mobileBottomTopPanelText ]-->
+		<div class="panel panel-text">
+			<div class="overflow">
+				<div class="btns-text">
+					<div class="btn-edit">
+						<svg height="20" width="20">
+							<path class="eraser" fill="#e69f18" d="m 16,0 -2,2 4,4 2,-2 z"></path>
+							<path class="pencil" fill="#666666" d="m 1,15 4,4 -5,1 z M 2,14 13,3 17,7 6,18 Z"></path>
+						</svg>
+					</div>
+					<div class="btn-font">
+						<svg height="24" width="22">
+							<path fill="#666666" d="m 22,19.08 -0.15,0.9 c -2.17,0.18 -4.14,-0.3 -6.36,0 0.8,-2 1.07,-3.78 1.31,-5.91 -1.2,0 -3.08,0 -5.61,0.1 -2.68,4.04 -4.643,6.25 -5.886,7.29 -1.241,1.04 -2.429,1.56 -3.547,1.56 -2.3321,0 -2.0381,-2.18 -0.8723,-2.18 0.5953,0 1.2463,0.32 1.8463,0.32 2.673,0 7.161,-7.08 8.399,-8.98 3.03,-4.67 5.49,-8.07 7.37,-10.2 -2.2,0.2 -6.85,0.204 -6.85,3.534 0,0.53 0.41,1.1 0.41,1.64 0,0.48 -0.43,0.87 -0.91,0.87 -0.91,0 -1.173,-0.85 -1.173,-1.62 C 9.977,2.144 14.13,1.34 17.45,1.09 18.88,0.97 20.08,0.98 21.21,0 20.89,1.28 20.66,2.4 20.53,3.36 l -1.95,15.61 c 1.2,0.26 2.21,0.34 3.42,0.11 z m -5.05,-6.19 c 0.5,-4.22 1,-7.31 1.5,-9.25 -2.25,3.04 -4.3,6.11 -6.41,9.25 1.58,0.1 3.32,0.12 4.91,0 z"></path>
+						</svg>
+					</div>
+					<div class="btn-color">
+						<svg height="24" width="24">
+							<use xlink:href="#color-wheel-colors"></use>
+							<circle fill="url(#color-wheel-gradient)" stroke="rgba(0,0,0,.35)" stroke-width="1" cx="12" cy="12" r="11.5"></circle>
+						</svg>
+					</div>
+					<div class="btn-bold" data-lang="106">Ж</div>
+					<div class="btn-italic" data-lang="107">К</div>
+					<div class="btn-underline" data-lang="108">Ч</div>
+					<div class="btn-align-left">
+						<svg height="17" width="15">
+							<path fill="#666666" d="M 0,0 H 15 V 2 H 0 Z M 12,10 H 0 v 2 H 12 Z M 0,15 h 6 v 2 H 0 Z M 0,5 H 9 V 7 H 0 Z"></path>
+						</svg>
+					</div>
+					<div class="btn-align-center">
+						<svg height="17" width="14">
+							<path fill="#666666" d="M 0,0 H 14 V 2 H 0 Z M 13,10 H 1 v 2 h 12 z m -9,5 h 6 v 2 H 4 Z M 3,5 h 8 V 7 H 3 Z"></path>
+						</svg>
+					</div>
+					<div class="btn-align-right">
+						<svg height="17" width="15">
+							<path fill="#666666" d="M 15,0 H 0 V 2 H 15 Z M 3,10 h 12 v 2 H 3 Z m 12,5 H 9 v 2 h 6 z M 15,5 H 6 v 2 h 9 z"></path>
+						</svg>
+					</div>
+					<div class="btn-pattern"><i></i></div>
+					<div class="btn-round">
+						<svg height="20" width="25">
+							<path fill="#666666" d="m 0,18.25 c 6.942,-7.05 18,-6.88 25,0 l -1.38,1.43 c -6.26,-6.13 -16,-6.32 -22.212,0 z M 23.29,9.882 C 22.5,11.79 21.16,12.47 19.22,11.68 17.17,10.83 16.98,9.09 17.74,7.19 l 1.11,-2.727 c 0.75,-1.862 2.16,-3 4.17,-2.172 1.99,0.817 2.38,2.248 1.66,4.199 L 22.94,5.778 c 0.4,-0.89 0.55,-1.63 -0.5,-2.059 -1.01,-0.413 -1.55,0.668 -1.86,1.443 l -1.11,2.737 c -0.32,0.809 -0.72,1.922 0.33,2.361 1,0.4 1.44,-0.2 1.76,-1.09 z M 11.81,3.832 h 0.93 c 0.36,0 0.63,-0.105 0.81,-0.321 0.36,-0.433 0.35,-1.199 0,-1.63 C 13.38,1.671 13.1,1.565 12.72,1.564 H 11.8 Z m 0,1.365 v 3.247 h 1.26 c 0.34,0 0.6,-0.118 0.76,-0.36 0.33,-0.487 0.32,-1.996 0,-2.504 -0.14,-0.255 -0.37,-0.383 -0.7,-0.383 z m 2.7,-0.759 C 16.47,4.979 16.74,10.01 13.07,10 H 9.995 V 0.0036 l 2.725,0.0105 c 3.41,0.0106 3.64,3.4909 1.77,4.4389 z M 3.129,8.566 4.716,7.923 2.559,4.819 Z M 5.604,9.21 3.371,10.12 3.707,12.24 1.965,12.94 0.7424,2.871 2.533,2.144 8.569,10.26 6.832,10.97 Z"></path>
+						</svg>
+					</div>
+					<div class="btn-line-height">
+						<svg height="19" width="22">
+							<path fill="#666666" d="M 4,0 0,4 H 3 V 15 H 0 l 4,4 4,-4 H 5 V 4 h 3 z m 4,1 2,2 H 22 V 1 Z m 1,5 v 2 h 9 V 6 Z m 0,5 v 2 h 12 v -2 z m 1,5 -2,2 h 11 v -2 z"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</script>
+	
+</div>
+	
+
+	
+	
+	
+</body>
+</html>
