@@ -1,0 +1,27 @@
+Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+});
+
+window.addEventListener('load', function () {
+	const header = document.querySelector('.header');
+	const headerTop = document.querySelector('.header__top');
+	header.classList.add('loaded');
+	headerTop.classList.add('loaded');
+});
+
+
+$(".up").click(function(){
+    $('html, body').animate({
+        scrollTop: 0
+    }, 500);
+    return false;
+});
+
+$(window).scroll(function() {
+    if ($(window).scrollTop()>1000){
+        $(".up").addClass('active');
+    }
+    else {
+        $(".up").removeClass('active');
+    }
+});
